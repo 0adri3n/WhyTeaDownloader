@@ -37,6 +37,10 @@ Go on a YouTube page, open Why Tea Downloader then click Download. Wait a bit an
 
 And everything works perfectly ! 
 
+## Special note
+
+Huge thanks to the api https://api.vevioz.com ! I couldn't implement a full downloader, so I bypassed it by displaying a download frame from an API !
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
