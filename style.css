@@ -1,0 +1,50 @@
+body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+    width: 150px;
+    height: 130px;
+  }
+
+#mp3_button{
+	
+	background-color: #1b2735;
+	color: rgb(4, 92, 4);
+    box-shadow: 0 0 0px #1b2735;
+    width: 60%;
+    transition: 0.6s;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    background-color: transparent;
+    border: none !important;
+    cursor: pointer;
+	
+}
+
+
+#mp4_button{
+
+    background-color: #1b2735;
+	color: rgb(4, 92, 4);
+    box-shadow: 0 0 0px #1b2735;
+    width: 60%;
+    transition: 0.6s;
+    position: absolute;
+    top: 65%;
+    left: 20%;
+    background-color: transparent;
+    border: none !important;
+    cursor: pointer;
+
+}
+
+#setting {
+
+    background-image: url('img/setting.png');
+    background-size: 29px 29px;
+    background-color: transparent;
+    border: none !important;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
