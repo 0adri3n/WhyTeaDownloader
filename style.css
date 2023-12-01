@@ -1,66 +1,41 @@
 body {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     overflow: hidden;
-    width: 250px;
-    height: 250px;
+    width: 500px;
+    height: 500px;
     background-image: url("img/icon.png");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Consolas', monospace; /* Changer la police par Consolas pour un style rétro */
+    font-family: 'Consolas', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#mp3_button,
-#mp4_button {
-    position: absolute;
-    width: 60%;
-    transition: 0.3s ease-in-out; /* Ajouter une transition fluide */
-    background-color: rgba(27, 39, 53, 0.8); /* Augmenter l'opacité */
+#dl_button {
+    width: 80%;
+    transition: 0.3s ease-in-out;
+    background-color: rgba(27, 39, 53, 0.8);
     border: none !important;
     cursor: pointer;
-    color: #fff; /* Couleur du texte en blanc */
+    color: #fff;
     text-align: center;
-    line-height: 40px; /* Centre le texte verticalement */
+    line-height: 40px;
 }
 
-#mp3_button:hover,
-#mp4_button:hover {
+#dl_button:hover {
     background-color: #1b2735;
     box-shadow: 0 0 10px rgba(4, 92, 4, 0.8);
-    transform: scale(1.05); /* Légèrement agrandir au survol */
-}
-
-#mp3_button {
-    top: 35%;
-    left: 20%;
-}
-
-#mp4_button {
-    top: 65%;
-    left: 20%;
+    transform: scale(1.05);
 }
 
 .download-icon {
-    width: 20px; /* Ajuster la taille de l'icône */
-    height: 20px; /* Ajuster la taille de l'icône */
-    margin-left: 5px; /* Marge à gauche pour séparer le texte de l'icône */
-    vertical-align: middle; /* Aligner verticalement avec le texte */
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
 }
 
-#setting {
-    background-image: url("img/setting.png");
-    background-size: cover;
-    position: absolute;
-    width: 27px;
-    height: 27px;
-    top: 1%;
-    left: 1%;
-    transition: transform 0.3s ease-in-out; /* Ajouter une transition pour le bouton de réglage */
-}
-
-#setting:hover {
-    transform: rotate(360deg); /* Rotation de 360 degrés au survol */
-    cursor: pointer;
-}
 
 #title {
     position: absolute;
@@ -68,37 +43,37 @@ body {
     left: 1%;
     width: 100%;
     text-align: center;
-    font-size: 20px; /* Ajuster la taille du texte */
-    font-weight: bold; /* Mettre le texte en gras */
-    animation: rainbowEffect 5s infinite linear, sizeChange 2s infinite alternate; /* Ajouter l'animation de l'arc-en-ciel et de la vague */
+    font-size: 35px;
+    font-weight: bold;
+    animation: rainbowEffect 5s infinite linear, sizeChange 2s infinite alternate;
 }
 
 @keyframes rainbowEffect {
     0% {
-        color: #ff0000; /* Rouge */
+        color: #ff0000;
     }
     20% {
-        color: #ff7f00; /* Orange */
+        color: #ff7f00;
     }
     40% {
-        color: #ffff00; /* Jaune */
+        color: #ffff00;
     }
     60% {
-        color: #00ff00; /* Vert */
+        color: #00ff00;
     }
     80% {
-        color: #0000ff; /* Bleu */
+        color: #0000ff;
     }
     100% {
-        color: #8b00ff; /* Violet */
+        color: #8b00ff;
     }
 }
 
 @keyframes sizeChange {
     0%, 100% {
-        font-size: 20px; /* Taille initiale et finale */
+        font-size: 30px;
     }
     50% {
-        font-size: 25px; /* Taille au milieu de l'animation */
+        font-size: 40px;
     }
 }

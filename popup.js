@@ -1,41 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var setting_link = document.getElementById('setting');
-    setting_link.addEventListener('click', function() {
-        setDownloadLocation();
-    });
 
-    var mp3_link = document.getElementById('mp3_button');
-    mp3_link.addEventListener('click', function() {
-        downloadMP3();
+    var download_button = document.getElementById('dl_button');
+    download_button.addEventListener('click', function() {
+        displayDownloadWidget();
     });
-
-    
-    var mp4_link = document.getElementById('mp4_button');
-    mp4_link.addEventListener('click', function() {
-        downloadMP4();
-    });
-
 });
 
-function setDownloadLocation(){
 
-    var location = prompt('Download location :');
-
-    try {
-        localStorage.setItem("dlLoc", location);
-        alert("Location set.");
-    } catch (error) {
-        alert("Error. Please retry.");
-    }
-
-}
-
-function downloadMP3(){
+function displayDownloadWidget() {
     var storedLocation = localStorage.getItem("dlLoc");
+    
+    chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+        var url = tabs[0].url;
+        if (isYouTubeUrl(url)) {
+            var widgetUrl = 'https://api.vevioz.com/apis/widget?url=' + url;
 
+            // Create an iframe element
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('id', 'widgetApi');
+            iframe.setAttribute('src', widgetUrl);
+            iframe.setAttribute('width', '100%');
+            iframe.setAttribute('height', '100%');
+            iframe.setAttribute('allowtransparency', 'true');
+            iframe.setAttribute('scrolling', 'no');
+            iframe.setAttribute('style', 'border:none; z-index: 9999; position: fixed; top: 0; left: 0;');
+
+            document.body.appendChild(iframe);
+
+            iframe.onload = function() {
+                var resizeScript = document.createElement('script');
+                resizeScript.text = 'iFrameResize({ log: false }, \'#widgetApi\')';
+                document.body.appendChild(resizeScript);
+
+            };
+
+        } else {
+            alert("Not a YouTube URL.");
+        }
+    });
 }
 
-function downloadMP4(){
-    var storedLocation = localStorage.getItem("dlLoc");
+function isYouTubeUrl(url) {
+    return url && typeof url === 'string' && url.includes("youtube.com");
 }
-
