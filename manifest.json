@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Why Tea Downloader",
-    "description": "Quick YouTube Downloader Extension", 
+    "description": "Quick YouTube Downloader Extension.", 
     "version": "1.0", 
    "permissions": [
     "http://*/*",
