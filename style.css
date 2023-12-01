@@ -1,50 +1,104 @@
 body {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     overflow: hidden;
-    width: 150px;
-    height: 130px;
-  }
-
-#mp3_button{
-	
-	background-color: #1b2735;
-	color: rgb(4, 92, 4);
-    box-shadow: 0 0 0px #1b2735;
-    width: 60%;
-    transition: 0.6s;
-    position: absolute;
-    top: 35%;
-    left: 20%;
-    background-color: transparent;
-    border: none !important;
-    cursor: pointer;
-	
+    width: 250px;
+    height: 250px;
+    background-image: url("img/icon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Consolas', monospace; /* Changer la police par Consolas pour un style rétro */
 }
 
-
-#mp4_button{
-
-    background-color: #1b2735;
-	color: rgb(4, 92, 4);
-    box-shadow: 0 0 0px #1b2735;
-    width: 60%;
-    transition: 0.6s;
+#mp3_button,
+#mp4_button {
     position: absolute;
-    top: 65%;
-    left: 20%;
-    background-color: transparent;
+    width: 60%;
+    transition: 0.3s ease-in-out; /* Ajouter une transition fluide */
+    background-color: rgba(27, 39, 53, 0.8); /* Augmenter l'opacité */
     border: none !important;
     cursor: pointer;
+    color: #fff; /* Couleur du texte en blanc */
+    text-align: center;
+    line-height: 40px; /* Centre le texte verticalement */
+}
 
+#mp3_button:hover,
+#mp4_button:hover {
+    background-color: #1b2735;
+    box-shadow: 0 0 10px rgba(4, 92, 4, 0.8);
+    transform: scale(1.05); /* Légèrement agrandir au survol */
+}
+
+#mp3_button {
+    top: 35%;
+    left: 20%;
+}
+
+#mp4_button {
+    top: 65%;
+    left: 20%;
+}
+
+.download-icon {
+    width: 20px; /* Ajuster la taille de l'icône */
+    height: 20px; /* Ajuster la taille de l'icône */
+    margin-left: 5px; /* Marge à gauche pour séparer le texte de l'icône */
+    vertical-align: middle; /* Aligner verticalement avec le texte */
 }
 
 #setting {
+    background-image: url("img/setting.png");
+    background-size: cover;
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    top: 1%;
+    left: 1%;
+    transition: transform 0.3s ease-in-out; /* Ajouter une transition pour le bouton de réglage */
+}
 
-    background-image: url('img/setting.png');
-    background-size: 29px 29px;
-    background-color: transparent;
-    border: none !important;
-    width: 30px;
-    height: 30px;
+#setting:hover {
+    transform: rotate(360deg); /* Rotation de 360 degrés au survol */
     cursor: pointer;
+}
+
+#title {
+    position: absolute;
+    top: 15%;
+    left: 1%;
+    width: 100%;
+    text-align: center;
+    font-size: 20px; /* Ajuster la taille du texte */
+    font-weight: bold; /* Mettre le texte en gras */
+    animation: rainbowEffect 5s infinite linear, sizeChange 2s infinite alternate; /* Ajouter l'animation de l'arc-en-ciel et de la vague */
+}
+
+@keyframes rainbowEffect {
+    0% {
+        color: #ff0000; /* Rouge */
+    }
+    20% {
+        color: #ff7f00; /* Orange */
+    }
+    40% {
+        color: #ffff00; /* Jaune */
+    }
+    60% {
+        color: #00ff00; /* Vert */
+    }
+    80% {
+        color: #0000ff; /* Bleu */
+    }
+    100% {
+        color: #8b00ff; /* Violet */
+    }
+}
+
+@keyframes sizeChange {
+    0%, 100% {
+        font-size: 20px; /* Taille initiale et finale */
+    }
+    50% {
+        font-size: 25px; /* Taille au milieu de l'animation */
+    }
 }
