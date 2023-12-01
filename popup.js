@@ -21,14 +21,21 @@ function setDownloadLocation(){
 
     var location = prompt('Download location :');
 
+    try {
+        localStorage.setItem("dlLoc", location);
+        alert("Location set.");
+    } catch (error) {
+        alert("Error. Please retry.");
+    }
 
 }
 
 function downloadMP3(){
-    alert("Downloading MP3");
+    var storedLocation = localStorage.getItem("dlLoc");
+
 }
 
 function downloadMP4(){
-    alert("Downloading MP4")
+    var storedLocation = localStorage.getItem("dlLoc");
 }
 
